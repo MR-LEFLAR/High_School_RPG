@@ -16,8 +16,9 @@ You were unable to find any of your classes
 
 A timer starts to count down for 5 minutes
 You lose the game if you are unable to find your classes
+You are forced to restart the peroid
 
-Inventory promt is given
+Inventory prompt is given
     - Gum
     - School_Map
     - Wallet
@@ -38,6 +39,7 @@ Third right
 Fourth door on your right
 
 You are expected to memorize this
+If you get it wrong, you become late and must restart the peroid
 
 Gives you sections of hallways where you can choose one of four options
     a) Left
@@ -46,7 +48,10 @@ Gives you sections of hallways where you can choose one of four options
     d) Back
 
 Once you reach class (On time), the teacher greets you and gives you a seat
-You are writing down notes, literally as a player
+You lose the game if you are unable to find your classes
+You are forced to restart the peroid
+
+You are writing down notes (literally as a player)
 - Write this down because this is going to be on the test -
 If the player cannot write it down properly, they will lose
 A timer is given
@@ -84,7 +89,7 @@ Inventory promt is given
 Choose School_Map
 
 After looking at the school map, you are given directions to where to go:
-Four left
+Fourth left
 Second left
 sixth right
 first left
@@ -99,6 +104,9 @@ Gives you sections of hallways where you can choose one of four options
     d) Back
 
 Once you reach class (On time) someone stops you before you go Inside
+You lose the game if you are unable to find your classes
+You are forced to restart the peroid
+
 Unexpected encounter occurs
 'Sup bro? Just wanted to let you know that your screwed for this class'
      - Friendly
@@ -122,24 +130,25 @@ To class: 'Okay class, we are going a play a fun game called "get-to-know.'
 'All you have to do is write down somethings I should know about on paper.'
 'NO TALKING!'
 
---Answers don't matter--
+--Answers will affect personality--
+--Based on your answers, you dialogue options may change--
 What is your favourite colour?
-    a) Blue
-    b) Green
-    c) Red
-    d) Yellow
+    a) Blue - (Creative)
+    b) Green - (Spiritual)
+    c) Red - (Agressive)
+    d) Yellow - (Laidback)
 
 Why did you decide to take this class?
-    a) This class is fun
-    b) I love the teacher
-    c) I had to take it
-    d) What class is this?
+    a) This class is fun - (Creative)
+    b) I love the teacher - (Spiritual)
+    c) I had to take it - (Agressive)
+    d) What class is this? - (Laidback)
 
 What do you like to do for fun?
-    a) Draw
-    b) Watch TV
-    c) Hangout with friends
-    d) I don't do anything
+    a) Draw - (Creative)
+    b) Hangout with friends - (Spiritual)
+    c) I don't do anything - (Agressive)
+    d) Watch TV - (Laidback)
 
 Bell rings
 
@@ -171,7 +180,10 @@ Gives you sections of hallways where you can choose one of four options
     c) Stright
     d) Back
 
- You enter the classroom (on time)
+You enter the classroom (on time)
+You lose the game if you are unable to find your classes
+You are forced to restart the peroid
+
 Teacher: 'Alright class, please take a seat.'
 'We are already behind so I have to give you a test'
 'Don't worry, it's just everything you've learned throughout school'
@@ -188,7 +200,7 @@ What is the slope of the given linear function?
 What is the angle of D> within the triangle (Degrees)
 B> = 120 - C>
 C> = 27
-A> = B> + C> + D>
+180 = B> + C> + D>
     a) 1
     b) 27
     c) 180
@@ -215,6 +227,8 @@ What does 6C1 equal?
     c) 6
     d) 36
 
-You finish the test, passing
+Your answers will affect your grades
+grades will be displayed after each day
+
 CONGRATS, YOU FINISHED YOUR FIRST DAY OF SCHOOL
 """
