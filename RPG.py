@@ -69,7 +69,7 @@ Choose 'Friendly'
 
 You responed with
 'I know right, it's too big and nobody even showed us around'
-'Very true, my name is Jacob, what's yours?'
+'Very true, my name is Jake, what's yours?'
 FRIEND accquired
 
 Bell rings
@@ -127,7 +127,8 @@ You enter the classroom
 'You shouldn't take so long to get to class, your late by 10 seconds.'
 'Tisk tisk.'
 To class: 'Okay class, we are going a play a fun game called "get-to-know.'
-'All you have to do is write down somethings I should know about on paper.'
+'All you have to do is write down somethings I should know about you
+on the paper.'
 'NO TALKING!'
 
 --Answers will affect personality--
@@ -217,9 +218,10 @@ number two please?'
     - Say_something_mean
 
 Choose Don't help him
-You - 'Sorry man, I don't want to get in trouble.
-Plus I don't know either.'
+You - 'Sorry, I don't want to get in trouble.
 Him - 'It's okay man, I get it, you don't like helping people, it's cool.'
+
+NETRUAL accquired
 
 What does 6C1 equal?
     a) 3
