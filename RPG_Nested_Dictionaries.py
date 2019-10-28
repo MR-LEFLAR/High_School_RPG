@@ -13,6 +13,13 @@ main_character = {
         "Personality": "depends on player choices"
 }
 
+#Prints the title for the list
+print("MAIN CHARACTER")
+for main in main_character.keys():
+    print(f"{main}:")
+# Makes it easier to read
+print("---------------------------------------------------------------------")
+
 # All the other characters shown in the game
 side_characters = {
         # In order of apperence
@@ -25,14 +32,10 @@ side_characters = {
         "Kate": "The girl who cheats on tests, can be friend or enemy"
 }
 
-# Combining the two dictionaries into a list
-characters = [main_character, side_characters]
-
-# Printing the charcater names and descriptions
-for character in characters:
-    print(character)
-    # Makes it easier to read
-    print("--------------------------------------------------------------")
+#Prints the title for the list
+print("SIDE CHARACTER")
+for side in side_characters.keys():
+    print(side)
 
 # Various locations within the school and the school itself
 locations = {
