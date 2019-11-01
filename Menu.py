@@ -5,8 +5,11 @@
 # Description: RPG Simple Menu start up
 
 # Variable that decide which menu will pop up
+# the names have no meaning or value
 starting_up = 1
+# access to each of the menus
 a = "not_null"
+# end menu screen
 menu = 0
 b = "idk"
 
@@ -39,7 +42,7 @@ while a == "null":
         print("\ttype 'lets do this' to begin")
         a = "not_null_again"
     elif b == "quit":
-        # Shows that you can quit at any time
+        # Shows that you can quit at any time and will end the game
         print("Thanks for playing!")
         a = "not_null"
     elif b != "start" or "quit":
@@ -51,13 +54,13 @@ while a == "null":
 while a == "not_null_again":
     menu = input()
     if menu == "lets do this":
-        # Start of day one
+        # Start of day one, the actual game
         print("=============================================================")
         print("--------------------------- DAY 1 ---------------------------")
         print("=============================================================")
         a = "not_null"
     elif menu == "quit":
-        # Shows that you can quit at any time
+        # Shows that you can quit at any time and will end the game
         print("Thanks for playing!")
         a = "not_null"
     elif menu != "lets do this" or "quit":
