@@ -4,68 +4,61 @@
 # Date created: 29/10/19
 # Description: RPG Simple Menu start up
 
-# Puts the entire men into a function
-def menu():
-    # Variable that decide which menu will pop up
-    # end menu screen
-    menu1 = 0
-    b = "idk"
-    a = "null"
+# Shows the titles
+print("""
+--------------------------WELCOME TO VIRTUAL HELL---------------------
+------------------------------AKA High School-------------------------
+  """)
+# Creates a book out of characters on the keyboard
+print("""
+                              ______ ______
+                            _/      Y      \_
+                           // ~~ ~~ | ~~ ~  \\
+                          // ~ ~ ~~ | ~~~ ~~ \\
+                         //________.|.________\\
+                        '----------`-'----------'
+  """)
 
-    # Shows the titles
-    print("""
-    --------------------------WELCOME TO VIRTUAL HELL---------------------
-    ------------------------------AKA High School-------------------------
-      """)
-    # Creates a book out of characters on the keyboard
-    print("""
-                                  ______ ______
-                                _/      Y      \_
-                               // ~~ ~~ | ~~ ~  \\
-                              // ~ ~ ~~ | ~~~ ~~ \\
-                             //________.|.________\\
-                            '----------`-'----------'
-      """)
-
-    while a == "null":
+def menu(a, b):
+    while a != "quit":
         # Letting the player actually interact with the game
         print("Type 'start' to begin")
-        b = input()
-        if b == "start":
+        print("Type 'quit' to end the porgram")
+        a = input().lower()
+        if a == "start":
             # Shows the instructions
-            print("\t----Here are the instructions----")
+            print("\t-------Here are the instructions-------")
             print("\tVarious stages of the game have different controls")
             print("\tYou will be told what you can and cannot type\n")
             print("\tType 'quit' at any point to leave the game")
             print("\ttype 'lets do this' to begin")
-            a = "not_null"
-        elif b == "quit":
-            # Shows that you can quit at any time and will end the game
-            print("Thanks for playing!")
+            b = "not_quit"
             a = "quit"
-        elif b != "start" or "quit":
-            # Tells the player to insert a valid command
+        elif a == "quit":
+            # Allows the player to quit at any time
+            print("Thanks for playing")
+        else:
+            # Points out if the command given is valid or not
             print("Invalid command")
 
-    while a == "not_null":
-        menu1 = input()
-        if menu1 == "lets do this":
+    while b != "quit":
+        b = input().lower()
+        if b == "lets do this":
             # Start of day one, the actual game
             print("""
         =====================================================================
         ------------------------------- DAY 1 -------------------------------
         =====================================================================
               """)
-            a = "not_null"
-        elif menu1 == "quit":
-            # Shows that you can quit at any time and will end the game
-            print("Thanks for playing!")
-            a = "not_null"
-        elif menu1 != "lets do this" or "quit":
-            # Tells the player to insert a valid command
+            b = "quit"
+        elif b == "quit":
+            # Allows the player to quit at any time
+            print("Thanks for playing")
+        else:
+            # Points out if the command given is valid or not
             print("Invalid command")
             print("Type 'lets do this' to begin")
             print("Type 'quit' to leave the game")
 
 # Calls the function
-menu()
+menu("null", "quit")
