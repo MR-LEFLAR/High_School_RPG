@@ -52,7 +52,8 @@ Inventory = {
         "Backpack": {"Binder": "Used to refer to notes for tests",
         "Pencil": "Used to write tests and notes, can have more than one",
         "Eraser": "Used to erase tests and notes, can have more than one",
-        "Lunch": "Can be eaten at any time"}
+        "Lunch": "Can be eaten at any time",
+        "Map": "Can be used to see where classes are"}
             }
 
 # Makes it easier to read
