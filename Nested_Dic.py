@@ -56,6 +56,7 @@ Inventory = {
         "Map": "Can be used to see where classes are"}
             }
 
+"""
 # Makes it easier to read
 print("------------------------------------------------------------------")
 # Prints out the main title for the dictionary
@@ -78,3 +79,4 @@ print("THE INVENTORY")
 thingy(Inventory)
 # Makes it easier to read
 print("------------------------------------------------------------------")
+"""
