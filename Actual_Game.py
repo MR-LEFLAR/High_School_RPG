@@ -10,27 +10,31 @@ from random import randint
 from CLASSES import main, map
 
 # Creates a child class from the main character class
-class MyCharacter(main):1
+class MyCharacter(main):
     # Creating a child class from the main character class
     def __init__(self, first, last, age, grade):
         # recalling the __init__ function from parent class
-        super().__init__(first, last, age)
+        self.first = first
+        self.last = last
+        self.age = age
         self.grade = grade
 
-MyCharacter(Jaden, Leflar, 16, 12)
-print(f"Hello {self.first} {self.last}, I see that you are {self.age} and")
-print(f"are in grade {self.grade}")
+MyCharacter("Jaden", "Leflar", 16, 12)
 
 my_map = map("The Player", "Math class", "English class", "Science class")
 print(f"{my_map.m} is 5 spaces up and 3 spaces left")
 print(f"{my_map.e} is 3 spaces up, 3 spaces left, and 2 spaces down")
 print(f"{my_map.s} is 5 spaces up and 3 spaces right")
+print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
 
 #  Creates a place holder for the main variable
-userinput = "Blank"
+userinput = "quit"
 walking_direction = "quit"
+main_character = "Blank"
 x = 5
 y = 6
+#  Uses the Python Standard Library of a random variable
+gum_total = randint(1, 10)
 
 #  Creates the Inventory that will be used in game
 Inventory = {
@@ -56,6 +60,25 @@ layer8 = [' 7 ', ' | ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' | ']
 #  Inputs layers into a list
 Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 
+#  Sets up who the main character is
+while main_character != "quit":
+    #  Asks what the players name is
+    try:
+        name = str(input("\tWhat is your name? "))
+        print(f"What kind of a name is {name}\n")
+    except ValueError:
+        print("I said a name, not a number")
+    finally:
+        #  Asks for the age
+        try:
+            age = int(input("\tNow, how old are you? "))
+            print(f"damn, {age} is pretty young\n")
+            main_character = "quit"
+            userinput = "not_quit"
+            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+        except ValueError:
+            print("No dummy, this time it's a number")
+
 #  Allows for user imput
 while userinput != "quit":
     #  Shows the inventory to the player
@@ -68,21 +91,26 @@ while userinput != "quit":
     #  Makes it easier to read
     print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
     if userinput == "gum":
-        #  Uses the Python Standard Library of a random variable
-        x = randint(1, 10)
-        print(f"\tYou have {x} pieces left")
+        print(f"\tYou have {gum_total} pieces left")
         print("DO YOU WANT A PIECE?")
         print("Type 'yes' or 'no'")
         userinput = input().lower()
         #  Shows when they have no gum
-        if x == 0:
+        if gum_total == 0:
             print("You have no more gum, good job")
             print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
         #  Allows the user to eat the gum
         elif userinput == "yes":
             x = x - 1
-            print(f"\tYou have {x} pieces left")
+            print(f"\tYou have {gum_total} pieces left")
             print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+            out_come = randint(1, 3)
+            if out_come == 1:
+                print("It was a bad piece and it tasted terrible")
+            elif out_come == 2:
+                print("Tasted pretty good, not bad")
+            elif out_come == 3:
+                print("You blew a bubble and it popped all over your face")
         elif userinput == "no":
             print("GOOD CHOICE")
         #  The player can quit at any time
