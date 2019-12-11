@@ -63,21 +63,29 @@ Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 #  Sets up who the main character is
 while main_character != "quit":
     #  Asks what the players name is
+    name = str(input("What is your name? "))
+    print(f"\tWhat kind of a name is {name}?")
+    #  Asks for the age
     try:
-        name = str(input("\tWhat is your name? "))
-        print(f"What kind of a name is {name}\n")
+        age = int(input("Now, how old are you? "))
+        print(f"\tdamn, {age} is pretty young")
+
+        print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
     except ValueError:
-        print("I said a name, not a number")
+        print("No dummy, I need a number")
     finally:
-        #  Asks for the age
-        try:
-            age = int(input("\tNow, how old are you? "))
-            print(f"damn, {age} is pretty young\n")
+        print(f"Alright {name}, I don't know why you are here but you are...")
+        print(f"Anyways, Welcome to HIGH SCHOOL!\n")
+        print("You want to play it?")
+        play_option = input("type 'yes' or 'no'")
+        if player_option == "yes":
+            print("GREAT!")
+        elif player_option == "no"
+            print("Wow, f**k you then")
             main_character = "quit"
             userinput = "not_quit"
-            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
-        except ValueError:
-            print("No dummy, this time it's a number")
+        else:
+            print(f"\t\t**Invalid input**")
 
 #  Allows for user imput
 while userinput != "quit":
@@ -177,6 +185,7 @@ while userinput != "quit":
     else:
         print(f"\t\t**Invalid input**")
 
+#  Part of the game where the player has to walk to class
 while walking_direction != "quit" and userinput == "quit":
     #  Shows the objective
     print("!Please get to english class!")
@@ -291,6 +300,7 @@ while walking_direction != "quit" and userinput == "quit":
         #  Shows when the player reaches the wrong classroom
         elif (x == 2 and y == 2) or (x == 8 and y == 2):
             print("Wrong class dummy")
+
     #  Allows player to move right
     elif walking_direction == "right":
         x = x + 1
