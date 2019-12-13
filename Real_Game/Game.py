@@ -10,7 +10,8 @@ from random import randint
 #  Creates a place holder for the main variable
 userinput = "quit"
 walking_direction = "quit"
-main_character = "Blank"
+intro = "Blank"
+player_option = "Blank"
 #  The location of the main character on the map
 x = 5
 y = 6
@@ -41,7 +42,7 @@ layer8 = [' 7 ', ' | ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' | ']
 Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 
 #  Sets up who the main character is
-while main_character != "quit":
+while intro != "quit":
     #  Asks what the players name is
     name = str(input("What is your name? "))
     print(f"\tWhat kind of a name is {name}?")
@@ -49,23 +50,22 @@ while main_character != "quit":
     try:
         age = int(input("Now, how old are you? "))
         print(f"\tdamn, {age} is pretty young")
-
+        intro = "quit"
         print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
     except ValueError:
-        print("No dummy, I need a number")
-    finally:
-        print(f"Alright {name}, I don't know why you are here but you are...")
-        print(f"Anyways, Welcome to HIGH SCHOOL!\n")
-        print("You want to play it?")
-        play_option = input("type 'yes' or 'no'")
-        if player_option == "yes":
-            print("GREAT!")
-        elif player_option == "no"
-            print("Wow, f**k you then")
-            main_character = "quit"
-            userinput = "not_quit"
-        else:
-            print(f"\t\t**Invalid input**")
+        print("\tNo dummy, I need a number, try again")
+    print(f"Alright {name}, I don't know why you are here but you are...")
+    print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
+    print("You want to play it?")
+    play_option = input("type 'yes' or 'no'").lower()
+    if player_option == "yes":
+        print("GREAT!")
+    elif player_option == "no":
+        print("Wow, f**k you then")
+        main_character = "quit"
+        userinput = "not_quit"
+    else:
+        print(f"\t\t**Invalid input**")
 
 #  Allows for user imput
 while userinput != "quit":
