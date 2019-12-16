@@ -24,6 +24,8 @@ You have nothing but your wallet, some gum, and whats in your Backpack
 You have been placed in front of the school and told to get to class with
 nothing but a map
 
+RINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNG
+
 Inventory prompt is given
     - Gum
     - Wallet
@@ -68,71 +70,91 @@ Random student starts talking to you
      - Too Friendly
      - Say nothing
 
-Choose 'Friendly'
+Choose 'Friendly':
+    'I know right, it's too big and nobody even showed us around'
+    'Very true, my name is Jake, what's yours?'
+    FRIEND accquired
 
-You responed with
-'I know right, it's too big and nobody even showed us around'
-'Very true, my name is Jake, what's yours?'
-FRIEND accquired
+Choose 'Hostile':
+    'Bro, back off. You'll have to find your next class on your own.'
+    'Ah geez, sorry man, I'll leave you alone.'
+    ACQUAINTANCE accquired
 
-Bell rings
-timer begins again
+Choose 'Too Friendly':
+    'Yeah I know, you know what else is big?. My love for you'
+    'Uuuugh, I have to go now...'
+    ACQUAINTANCE accquired
+
+Choose 'Say nothing':
+    'Oh alright, I'll leave you alone.'
+    ACQUAINTANCE accquired
+
+RINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNG
 
 Inventory promt is given
-    - Gum
-    - School_Map
-    - Wallet
-    - Backpack
-    Inside Backpack
-        - Binder
-        - Pencil
-        - Eraser
-        - Lunch
 
 Choose School_Map
 
-After looking at the school map, you are given directions to where to go:
-Fourth left
-Second left
-sixth right
-first left
-second door on your right
+Map - Map of the school, used to navigate
+_ _ _ _ _ _ _ _ _
+|M  . . . . .  S|
+| _ _  _ . _ _ _|
+| . . . . . . . |
+| . | . . . | . |
+| E | . P . | . |
+| _ _ _ _ _ _ _ |
 
-You are expected to memorize this
+You are able to move left, right, up, and down, and know the location based off
+a grid with coordinates
 
-Gives you sections of hallways where you can choose one of four options
-    a) Left
-    b) Right
-    c) Stright
-    d) Back
+period two is "S" or Science
 
-Once you reach class (On time) someone stops you before you go Inside
-You lose the game if you are unable to find your classes
-You are forced to restart the peroid
+Once you reach class, someone stops you before you go Inside
+
+RINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNG
 
 Unexpected encounter occurs
 'Sup bro? Just wanted to let you know that your screwed for this class'
+He smerks showing his yellow teeth
      - Friendly
      - Hostile
      - Too Friendly
      - Say nothing
 
-Choose 'Hostile'
+Choose 'Friendly':
+    'Thanks for the heads up, I'll try to pay attention in this class then'
+    'Wait, what?'
+    Confused by your words, he doesn't know what to do
+    You enter the class and he follows you soon after to take a seat
+    ACQUAINTANCE accquired
 
-You respond with
-'Thank you so much for that, I really couldn't care less'
-'Hey! Nobody is allowed to talk to Roger like that'
-He walks through you, pushing your shoulder and
-Did he literally wait there to tell you that?
-ENEMY accquired
+Choose 'Hostile':
+    'That's cool and all but I don't remember anyone asking'
+    'Hey! Nobody is allowed to talk to Roger like that'
+    He walks through you, pushing your shoulder and
+    Did he literally wait there to tell you that?
+    ENEMY accquired
+
+Choose 'Too Friendly':
+    'I guess you'll just have to help me out then'
+    You give him a wink, he looks confused
+    Confused by your words, he doesn't know what to do
+    You enter the class and he follows you soon after to take a seat
+    ACQUAINTANCE accquired
+
+Choose 'Say Nothing':
+    'It's not nice to ignore the person who's talking to you bud'
+    You enter the class and he follows you soon after to take a seat
+    ENEMY accquired
 
 You enter the classroom
 'You shouldn't take so long to get to class, your late by 10 seconds.'
+    says the teacher
 'Tisk tisk.'
 To class: 'Okay class, we are going a play a fun game called "get-to-know.'
 'All you have to do is write down somethings I should know about you
 on the paper.'
-'NO TALKING!'
+'NO TALKING!!! Please...'
 
 --Answers will affect personality--
 --Based on your answers, you dialogue options may change--
@@ -152,41 +174,29 @@ What do you like to do for fun?
     a) Draw - (Creative)
     b) Hangout with friends - (Spiritual)
     c) I don't do anything - (Agressive)
-    d) Watch TV - (Laidback)
+    d) Watch Netflix - (Laidback)
 
-Bell rings
+RINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNG
 
 Inventory promt is given
-    - Gum
-    - School_Map
-    - Wallet
-    - Backpack
-    Inside Backpack
-        - Binder
-        - Pencil
-        - Eraser
-        - Lunch
 
 Choose School_Map
 
-After looking at the school map, you are given directions to where to go:
-Seventh Right
-First left
-First right
-First left
-second door on your left
+Map - Map of the school, used to navigate
+_ _ _ _ _ _ _ _ _
+|M  . . . . .  S|
+| _ _  _ . _ _ _|
+| . . . . . . . |
+| . | . . . | . |
+| E | . P . | . |
+| _ _ _ _ _ _ _ |
 
-You are expected to memorize this
+You are able to move left, right, up, and down, and know the location based off
+a grid with coordinates
 
-Gives you sections of hallways where you can choose one of four options
-    a) Left
-    b) Right
-    c) Stright
-    d) Back
+period three is "M" or Math
 
-You enter the classroom (on time)
-You lose the game if you are unable to find your classes
-You are forced to restart the peroid
+You enter the classroom
 
 Teacher: 'Alright class, please take a seat.'
 'We are already behind so I have to give you a test'
@@ -196,35 +206,34 @@ You are given the test
 
 What is the slope of the given linear function?
 -6y + 6x = 12
-    a) 2
+    a) -1
     b) 6
     c) -6
     d) It doesn't have one
 
-What is the angle of D> within the triangle (Degrees)
+What is D> within the triangle (Degrees)?
 B> = 120 - C>
 C> = 27
 180 = B> + C> + D>
     a) 1
     b) 27
     c) 180
-    d) 60
+    d) 33
 
 Unexpected encounter occurs
 A kid who clearly doesn't know what to do is trying to talk to you
 'Pssssssst, hey man! Can you help me out?'
 'I don't know anything on this test, could you give me the answer for
 number two please?'
-    - Help_him
-    - Don't_help_him
-    - Say_nothing
-    - Say_something_mean
+    - Help him (Friendly)
+    - Give him the wrong answer (Aggresive)
+    - Give him all the answers (Too Friendly)
+    - Don't help him
 
-Choose Don't help him
-You - 'Sorry, I don't want to get in trouble.
-Him - 'It's okay man, I get it, you don't like helping people, it's cool.'
-
-NETRUAL accquired
+Choose 'Don't help him':
+    'Sorry, I don't want to get in trouble.
+    'It's okay man, I get it, you don't like helping people, it's cool.'
+    ACQUAINTANCE accquired
 
 What does 6C1 equal?
     a) 3

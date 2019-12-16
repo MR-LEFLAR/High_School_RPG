@@ -54,6 +54,7 @@ while intro != "quit":
         print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
     except ValueError:
         print("\tNo dummy, I need a number, try again")
+
     print(f"Alright {name}, I don't know why you are here but you are...")
     print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
     print("You want to play it?")
