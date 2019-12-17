@@ -10,14 +10,15 @@ from random import randint
 #  Creates a place holder for the main variable
 userinput = "quit"
 walking_direction = "quit"
-intro = "Blank"
-player_option = "Blank"
+player_option = "blank"
 #  The location of the main character on the map
 x = 5
 y = 6
+
+#  Total of gum
 gum_total = 10
 
-#  Creates the Inventory that will be used in game
+#  Inventory of the main character
 Inventory = {
         "Gum": {"Total pieces left": 10},
         "Wallet": {"Total cash": "$12.27"},
@@ -42,31 +43,28 @@ layer8 = [' 7 ', ' | ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' | ']
 Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 
 #  Sets up who the main character is
-while intro != "quit":
-    #  Asks what the players name is
-    name = str(input("What is your name? "))
-    print(f"\tWhat kind of a name is {name}?")
-    #  Asks for the age
-    try:
-        age = int(input("Now, how old are you? "))
-        print(f"\tdamn, {age} is pretty young")
-        intro = "quit"
-        print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
-    except ValueError:
-        print("\tNo dummy, I need a number, try again")
+def the_intro(message):
+    print(message)
+    name = str(input()).lower()
+    print(f"I see.")
+    print(f"Well {name}, here are your classes for this semester.")
+    print(f"Do not be late please")
 
-    print(f"Alright {name}, I don't know why you are here but you are...")
-    print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
-    print("You want to play it?")
-    play_option = input("type 'yes' or 'no'").lower()
-    if player_option == "yes":
-        print("GREAT!")
-    elif player_option == "no":
-        print("Wow, f**k you then")
-        main_character = "quit"
-        userinput = "not_quit"
-    else:
-        print(f"\t\t**Invalid input**")
+the_intro("I see here that your name is...")
+
+"""print(f"Alright {name}, I don't know why you are here but you are...")
+print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
+print("You want to play it?")
+play_option = input("type 'yes' or 'no'").lower()
+if player_option == "yes":
+    print("GREAT!")
+elif player_option == "no":
+    print("Wow, f**k you then")
+    main_character = "quit"
+    userinput = "not_quit"
+else:
+    print(f"\t\t**Invalid input**")
+"""
 
 #  Allows for user imput
 while userinput != "quit":

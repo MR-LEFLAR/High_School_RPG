@@ -206,7 +206,7 @@ You are given the test
 
 What is the slope of the given linear function?
 -6y + 6x = 12
-    a) -1
+    a) -1 ---
     b) 6
     c) -6
     d) It doesn't have one
@@ -218,7 +218,7 @@ C> = 27
     a) 1
     b) 27
     c) 180
-    d) 33
+    d) 33 ---
 
 Unexpected encounter occurs
 A kid who clearly doesn't know what to do is trying to talk to you
@@ -230,6 +230,28 @@ number two please?'
     - Give him all the answers (Too Friendly)
     - Don't help him
 
+Choose 'Help him':
+    'Sure man, I'm pretty sure it's...'
+        player chooses
+        a)
+        b)
+        c)
+        d)
+    'Thanks man, your a life saver'
+    FRIEND accquired
+
+Choose 'Give him the wrong answer':
+    'I'm pretty sure the answer is e), I don't see it being anything else'
+    'Dude, their isn't a e)...'
+    ACQUAINTANCE accquired
+
+Choose 'Give him all the answers':
+    'Sure, so the first is...'
+    (teacher) - 'OMG! Are you cheating? Stepout side please RIGHT NOW'
+    FRIEND accquired
+        Your mom is called and you are sent home early
+            CONGRATS, YOU FINISHED YOUR FIRST DAY OF SCHOOL
+
 Choose 'Don't help him':
     'Sorry, I don't want to get in trouble.
     'It's okay man, I get it, you don't like helping people, it's cool.'
@@ -238,10 +260,11 @@ Choose 'Don't help him':
 What does 6C1 equal?
     a) 3
     b) 1
-    c) 6
+    c) 6 ---
     d) 36
 
-Your answers will affect your grades
+
+The answers to your test make up your grades, just like real life
 grades will be displayed after each day
 
 CONGRATS, YOU FINISHED YOUR FIRST DAY OF SCHOOL
