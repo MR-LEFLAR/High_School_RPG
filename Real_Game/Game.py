@@ -47,10 +47,10 @@ def the_intro(message):
     print(message)
     name = str(input()).lower()
     print(f"I see.")
-    print(f"Well {name}, here are your classes for this semester.")
+    print(f"Well {name.upper()}, here are your classes for this semester.")
     print(f"Do not be late please")
 
-the_intro("I see here that your name is...")
+the_intro("It says your name here is...")
 
 """print(f"Alright {name}, I don't know why you are here but you are...")
 print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
@@ -59,7 +59,7 @@ play_option = input("type 'yes' or 'no'").lower()
 if player_option == "yes":
     print("GREAT!")
 elif player_option == "no":
-    print("Wow, f**k you then")
+    print("Wow, f*** you then")
     main_character = "quit"
     userinput = "not_quit"
 else:
@@ -332,3 +332,24 @@ while walking_direction != "quit" and userinput == "quit":
         print("Thanks for playing")
     else:
         print(f"\t\t**Invalid input**")
+
+#  Class that organizes the students marks
+class Grades:
+    def __init__(self, english, math, science):
+        self.english = english
+        self.math = math
+        self.science = science
+        english = E
+        math = M
+        science = S
+    def english_grade(self):
+        print(f"Your English grade is {self.english}%")
+    def math_grade(self):
+        print(f"Your Math grade is {self.math}%")
+    def science_grade(self):
+        print(f"Your Science grade is {self.science}%")
+
+your_grades = Grades(0, 0, 0)
+your_grades.english_grade()
+your_grades.math_grade()
+your_grades.science_grade()
