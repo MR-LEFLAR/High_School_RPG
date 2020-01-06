@@ -1,3 +1,6 @@
+"""A file with the purpose of testing different code types
+does not have anything to do with the game"""
+
 def post_float(message):
     """Test for checking if an input is a positive float"""
     # the while loop makes sure the program continues until the user
@@ -20,4 +23,4 @@ def post_float(message):
             print("Input is not a number. Try again.")
             continue
 
-post_float("Give me a positive number")
+post_float("Give me a positive number ")

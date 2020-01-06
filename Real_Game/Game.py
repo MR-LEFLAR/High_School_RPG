@@ -7,10 +7,11 @@
 #  Imports random variable generator
 from random import randint
 
-#  Creates a place holder for the main variable
+#  Creates a place holder for the main variables
 userinput = "quit"
 walking_direction = "quit"
 player_option = "blank"
+
 #  The location of the main character on the map
 x = 5
 y = 6
@@ -42,12 +43,53 @@ layer8 = [' 7 ', ' | ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' | ']
 #  Inputs layers into a list
 Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 
-#  Sets up who the main character is
+#  Class that organizes the students marks
+class Grades:
+    def __init__(self, english, math, science):
+        #  English = E
+        self.english = english
+        #  Math = M
+        self.math = math
+        #  Science = S
+        self.science = science
+    def english_grade(self):
+        print(f"Your English grade is {self.english}%")
+    def math_grade(self):
+        print(f"Your Math grade is {self.math}%")
+    def science_grade(self):
+        print(f"Your Science grade is {self.science}%")
+
+# JADEN, Make sure you change these to variables
+your_grades = Grades(0, 0, 0)
+your_grades.english_grade()
+your_grades.math_grade()
+your_grades.science_grade()
+
+"""Introduction"""
 def the_intro(message):
+    #  Principal asks for students name
     print(message)
     name = str(input()).lower()
-    print(f"I see.")
-    print(f"Well {name.upper()}, here are your classes for this semester.")
+    #  She repsonds
+    print(f"I see...")
+    print("Just one moment please.")
+    #  player has to type anything to progress
+    #  Makes it feel as if you are waiting and breaks up the many text boxes
+    this_is_a_variable = input()
+    #  Shows that she is actually doing something
+    print("\tShe clicks her mouse and shuffles through papers")
+    idk_what_to_call_this = input()
+    one_last_variable = input()
+    print(f"Well {name.upper()}")
+    #  YOU ARE IN SCHOOL NOW< YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
+    print(f"I'm glad to say that you are enroled in Sheetie school!")
+    i_lied_about_that_being_the_last_one = input()
+    print("Here are your classes ")
+    paper = input("type 'paper' to view your classes").lower()
+    if paper == "paper":
+        print(" Peroid 1 is English\n Peroid 2 is Math\n Peroid 3 is Science")
+    else:
+        print("Well you will have to look at it at some point")
     print(f"Do not be late please")
 
 the_intro("It says your name here is...")
@@ -332,24 +374,3 @@ while walking_direction != "quit" and userinput == "quit":
         print("Thanks for playing")
     else:
         print(f"\t\t**Invalid input**")
-
-#  Class that organizes the students marks
-class Grades:
-    def __init__(self, english, math, science):
-        self.english = english
-        self.math = math
-        self.science = science
-        english = E
-        math = M
-        science = S
-    def english_grade(self):
-        print(f"Your English grade is {self.english}%")
-    def math_grade(self):
-        print(f"Your Math grade is {self.math}%")
-    def science_grade(self):
-        print(f"Your Science grade is {self.science}%")
-
-your_grades = Grades(0, 0, 0)
-your_grades.english_grade()
-your_grades.math_grade()
-your_grades.science_grade()

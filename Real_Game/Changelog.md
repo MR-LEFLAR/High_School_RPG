@@ -1,0 +1,5 @@
+ - Main game file created - December 12th, 2019
+ - Pseudocode created and finished - December 15th 2019
+ - Todo log created - December 15th, 2019
+ - Change log created - January 6th, 2020
+ - 
