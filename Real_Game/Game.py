@@ -11,6 +11,7 @@ from random import randint
 userinput = "quit"
 walking_direction = "quit"
 player_option = "blank"
+name = ""
 
 #  The location of the main character on the map
 x = 5
@@ -69,32 +70,48 @@ your_grades.science_grade()
 def the_intro(message):
     #  Principal asks for students name
     print(message)
+    global name
     name = str(input()).lower()
-    #  She repsonds
-    print(f"I see...")
+    while name == "":
+        print("You must have a name.")
+        name = str(input()).lower()
+    else:
+        #  She repsonds
+        print(f"I see...")
     print("Just one moment please.")
     #  player has to type anything to progress
     #  Makes it feel as if you are waiting and breaks up the many text boxes
-    this_is_a_variable = input()
+    input()
     #  Shows that she is actually doing something
     print("\tShe clicks her mouse and shuffles through papers")
-    idk_what_to_call_this = input()
-    one_last_variable = input()
-    print(f"Well {name.upper()}")
-    #  YOU ARE IN SCHOOL NOW< YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
+    input()
+    input()
+    print(f"Well {name.upper()},")
+    #  YOU ARE IN SCHOOL NOW YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
     print(f"I'm glad to say that you are enroled in Sheetie school!")
     i_lied_about_that_being_the_last_one = input()
-    print("Here are your classes ")
-    paper = input("type 'paper' to view your classes").lower()
+    print("Here are your classes.")
+    paper = input("\ttype 'paper' to view your classes ").lower()
+    #  Lets the player make his first choice
     if paper == "paper":
         print(" Peroid 1 is English\n Peroid 2 is Math\n Peroid 3 is Science")
     else:
         print("Well you will have to look at it at some point")
-    print(f"Do not be late please")
+    print(f"Do not be late please.")
+    input()
 
 the_intro("It says your name here is...")
 
-"""print(f"Alright {name}, I don't know why you are here but you are...")
+# Imports the introduction menu with the logo and title screen
+import Menu
+
+print("""
+    =====================================================================
+    ------------------------------- DAY 1 -------------------------------
+    =====================================================================
+""")
+
+print(f"Alright {name}, I don't know why you are here but you are...")
 print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
 print("You want to play it?")
 play_option = input("type 'yes' or 'no'").lower()
@@ -106,7 +123,6 @@ elif player_option == "no":
     userinput = "not_quit"
 else:
     print(f"\t\t**Invalid input**")
-"""
 
 #  Allows for user imput
 while userinput != "quit":

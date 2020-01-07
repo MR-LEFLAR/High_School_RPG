@@ -7,16 +7,17 @@
 # Shows the titles
 print("""
 --------------------------WELCOME TO VIRTUAL HELL---------------------
-------------------------------AKA High School-------------------------
+-----------------------------AKA SHEETI SCHOOL------------------------
   """)
+
 # Creates a book out of characters on the keyboard
 print("""
-                              ______ ______
-                            _/      Y      \_
-                           // ~~ ~~ | ~~ ~  \\
-                          // ~ ~ ~~ | ~~~ ~~ \\
-                         //________.|.________\\
-                        '----------`-'----------'
+                          ______ ______
+                        _/      Y      \_
+                       // ~~ ~~ | ~~ ~  \\
+                      // ~ ~ ~~ | ~~~ ~~ \\
+                     //________.|.________\\
+                    '----------`-'----------'
   """)
 
 def menu(a, b):
@@ -32,33 +33,15 @@ def menu(a, b):
             print("\tYou will be told what you can and cannot type\n")
             print("\tType 'quit' at any point to leave the game")
             print("\ttype 'lets do this' to begin")
-            b = "not_quit"
             a = "quit"
+            # Lets the text get divided
+            input()
         elif a == "quit":
             # Allows the player to quit at any time
             print("Thanks for playing")
         else:
             # Points out if the command given is valid or not
             print("Invalid command")
-
-    while b != "quit":
-        b = input().lower()
-        if b == "lets do this":
-            # Start of day one, the actual game
-            print("""
-        =====================================================================
-        ------------------------------- DAY 1 -------------------------------
-        =====================================================================
-              """)
-            b = "quit"
-        elif b == "quit":
-            # Allows the player to quit at any time
-            print("Thanks for playing")
-        else:
-            # Points out if the command given is valid or not
-            print("Invalid command")
-            print("Type 'lets do this' to begin")
-            print("Type 'quit' to leave the game")
 
 # Calls the function
 menu("null", "quit")
