@@ -11,6 +11,7 @@ from random import randint
 userinput = "quit"
 walking_direction = "quit"
 player_option = "blank"
+wallet = 12.27
 name = ""
 
 #  The location of the main character on the map
@@ -20,7 +21,7 @@ y = 6
 #  Total of gum
 gum_total = 10
 
-#  Inventory of the main character
+#  Creates the Inventory that will be used in game
 Inventory = {
         "Gum": {"Total pieces left": 10},
         "Wallet": {"Total cash": "$12.27"},
@@ -54,17 +55,13 @@ class Grades:
         #  Science = S
         self.science = science
     def english_grade(self):
-        print(f"Your English grade is {self.english}%")
+        print(f"\t\tYour English grade is {self.english}%")
     def math_grade(self):
-        print(f"Your Math grade is {self.math}%")
+        print(f"\t\tYour Math grade is {self.math}%")
     def science_grade(self):
-        print(f"Your Science grade is {self.science}%")
+        print(f"\t\tYour Science grade is {self.science}%")
 
 # JADEN, Make sure you change these to variables
-your_grades = Grades(0, 0, 0)
-your_grades.english_grade()
-your_grades.math_grade()
-your_grades.science_grade()
 
 """Introduction"""
 def the_intro(message):
@@ -100,38 +97,43 @@ def the_intro(message):
     print(f"Do not be late please.")
     input()
 
-the_intro("It says your name here is...")
+the_intro("So your name is...")
 
 # Imports the introduction menu with the logo and title screen
 import Menu
 
+name = name.upper()
+the_beginning = input()
+
+"""And it begins"""
 print("""
     =====================================================================
     ------------------------------- DAY 1 -------------------------------
     =====================================================================
 """)
+your_grades = Grades(0, 0, 0)
+your_grades.english_grade()
+your_grades.math_grade()
+your_grades.science_grade()
 
-print(f"Alright {name}, I don't know why you are here but you are...")
-print(f"Anyways, Welcome to HIGH SHEETI SCHOOL!\n")
-print("You want to play it?")
-play_option = input("type 'yes' or 'no'").lower()
-if player_option == "yes":
-    print("GREAT!")
-elif player_option == "no":
-    print("Wow, f*** you then")
-    main_character = "quit"
-    userinput = "not_quit"
-else:
-    print(f"\t\t**Invalid input**")
+print("You walk in the school")
+print("A sea of students is all you can see")
+input()
+print("You stand there not knowing what to do until you remember...")
+print("You have a backpack!")
 
-#  Allows for user imput
+#  Opens a loop
+userinput = "IDK"
+input()
+
+#  Allows for user input for the inventory
 while userinput != "quit":
     #  Shows the inventory to the player
     print("THIS IS YOUR INVENTORY")
     for item in Inventory:
         print(f"\t{item.upper()}")
     print("Type name of each item to see their values")
-    print("Press 'quit' to end the game")
+    print("You can still press 'quit'")
     userinput = input().lower()
     #  Makes it easier to read
     print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
@@ -143,19 +145,20 @@ while userinput != "quit":
         #  Shows when they have no gum
         if gum_total == 0:
             print("You have no more gum, good job")
-            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
         #  Allows the user to eat the gum
         elif userinput == "yes":
-            x = x - 1
+            gum_total = gum_total - 1
             print(f"\tYou have {gum_total} pieces left")
-            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
-            out_come = randint(1, 3)
-            if out_come == 1:
-                print("It was a bad piece and it tasted terrible")
-            elif out_come == 2:
+            gum_out_come = randint(1, 3)
+            if gum_out_come == 1:
+                print("It was a bad piece, it tasted terrible")
+                input()
+            elif gum_out_come == 2:
                 print("Tasted pretty good, not bad")
-            elif out_come == 3:
+                input()
+            elif gum_out_come == 3:
                 print("You blew a bubble and it popped all over your face")
+                input()
         elif userinput == "no":
             print("GOOD CHOICE")
         #  The player can quit at any time
@@ -164,10 +167,11 @@ while userinput != "quit":
         #  Can go back on menus
         else:
             print(f"\t\t**Invalid input**")
+            input()
     elif userinput == "wallet":
         wallet = 12.27
         print(f"You have ${wallet} in your wallet")
-        print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+        input()
     elif userinput == "backpack":
         #  This is inside your backpack
         print("This is inside your backpack")
@@ -176,15 +180,15 @@ while userinput != "quit":
         print(f"\tLUNCH")
         userinput = input().lower()
         if userinput == "binder":
-            print("just notes in here, you don't need to look at them")
-            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+            print("You have no notes yet")
+            input()
         if userinput == "lunch":
-            print("YOU HAVE A LUNCH")
+            print("YOU HAVE A LUNCH!")
             print("\tTurkey sandwich with mayo and lettuce")
-            print("\tCut up and washed strawberries")
-            print("\tA granola bar - chocolate chip kind")
-            print("\tAnd a juice box of mixed berry")
-            print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+            print("\tCut and washed strawberries")
+            print("\tA granola bar - the chocolate chip kind")
+            print("\tAnd a juice box of strawberry and kiwi")
+            input()
         elif userinput == "map":
             #  prints map with borders
             print("<><><><><><><><><><><><><><>")
@@ -195,40 +199,47 @@ while userinput != "quit":
             print("\tE = English class")
             print("\tM = Math class")
             print("\tS = Science class")
-            print("\tP = Entrace, Where the player starts")
+            print("\tP = Entrace, Where the player STARTS")
             print("DO YOU WANT TO START WALKING?")
             print("\t type 'yes' or 'no'")
             userinput = input().lower()
             if userinput == "yes":
                 # Tells player the comands when walking
-                print("TYPE A COMMAND")
-                print("\t'up' to go up")
-                print("\t'down' to go down")
-                print("\t'left' to go left")
-                print("\t'right' to go right")
-                print("\t'quit'")
-                print("\t'map' to view the map again")
                 userinput = "quit"
-                walking_direction = input().lower()
+                variable_name = "yes"
             elif userinput == "no":
                 print("WOW OK")
                 print("<><><><><><><><><><><><><><><><><><><><><><><><><><><>")
             else:
                 print(f"\t\t**Invalid input**")
+                input()
         else:
             print(f"\t\t**Invalid input**")
+            input()
     elif userinput == "quit":
         print("Thanks for playing")
     else:
         print(f"\t\t**Invalid input**")
+        input()
+
+while variable_name == "yes"
+    print("TYPE A COMMAND")
+    print("\t'up' to go up")
+    print("\t'down' to go down")
+    print("\t'left' to go left")
+    print("\t'right' to go right")
+    print("\t'quit'")
+    print("\t'map' to view the map again")
+    walking_direction = "not_quit"
+    input("Did you get all that? ")
 
 #  Part of the game where the player has to walk to class
 while walking_direction != "quit" and userinput == "quit":
     #  Shows the objective
-    print("!Please get to english class!")
+    print("Objective - Get to English class")
     print("THESE ARE YOUR COORDINATES")
-    print(f"\t{x}, {y}")
-    walking_direction = input().lower()
+    print(f"\t{x}, {y}\n")
+    walking_direction = input(Alright).lower()
     #  Allows player to move up
     if walking_direction == "up":
         y = y - 1
