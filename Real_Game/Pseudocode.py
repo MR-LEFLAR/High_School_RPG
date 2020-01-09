@@ -70,6 +70,9 @@ Random student starts talking to you
      - Too Friendly
      - Say nothing
 
+#  E = 2, 6
+#  A = 2, 2
+#  F = 8, 2
 Choose 'Friendly':
     'I know right, it's too big and nobody even showed us around'
     'Very true, my name is Jake, what's yours?'

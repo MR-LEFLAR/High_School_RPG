@@ -13,9 +13,13 @@ walking_direction = "quit"
 player_option = "blank"
 wallet = 12.27
 name = ""
+variable_name = "no"
+English_class = "quit"
 
 #  The location of the main character on the map
+global x
 x = 5
+global y
 y = 6
 
 #  Total of gum
@@ -208,7 +212,7 @@ while userinput != "quit":
                 userinput = "quit"
                 variable_name = "yes"
             elif userinput == "no":
-                print("WOW OK")
+                print("You will have to sooner or later to progress")
                 print("<><><><><><><><><><><><><><><><><><><><><><><><><><><>")
             else:
                 print(f"\t\t**Invalid input**")
@@ -222,7 +226,181 @@ while userinput != "quit":
         print(f"\t\t**Invalid input**")
         input()
 
-while variable_name == "yes"
+
+"""Code for the walking portion of the game"""
+def walking(E1, E2, A1, A2, F1, F2):
+    walking_direction = "not_quit"
+    global x
+    global y
+    while walking_direction != "quit":
+        #  Shows the objective
+        print("Objective - Get to English class")
+        print("THESE ARE YOUR COORDINATES")
+        print(f"\t{x}, {y}\n")
+        walking_direction = input("type a direction ").lower()
+        #  Allows player to move up
+        if walking_direction == "up":
+            y = y - 1
+            if y == 1:
+                y = y + 1
+                print("You have ran into a wall, good job!")
+            elif x == E1 and y == E2:
+                print("Wow, you actually got to class")
+                walking_direction = "quit"
+            #  States the restrictions of the player for movement
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 3 and y == 5) or (x == 3 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 7 and y == 5) or (x == 7 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == A1 and y == A2) or (x == F1 and y == F2):
+                print("Wrong class dummy")
+        #  Allows player to move down
+        elif walking_direction == "down":
+            y = y + 1
+            if y == 7:
+                y = y - 1
+                print("You have ran into a wall, good job!")
+            elif x == E1 and y == E2:
+                print("Nice, you actually got to class, that's shocking")
+                walking_direction = "quit"
+            #  States the restrictions of the player for movement
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 3 and y == 5) or (x == 3 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player for movement
+            elif (x == 7 and y == 5) or (x == 7 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  Shows when the player reaches the wrong classroom
+            elif (x == A1 and y == A2) or (x == F1 and y == F2):
+                print("Wrong class dummy")
+        #  Allows player to move left
+        elif walking_direction == "left":
+            x = x - 1
+            if x == 1:
+                x = x + 1
+                print("You have ran into a wall, good job!")
+            elif x == E1 and y == E2:
+                print("Nice, you actually got to class, that's shocking")
+                walking_direction = "quit"
+            #  States the restrictions of the player
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 3 and y == 5) or (x == 3 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 7 and y == 5) or (x == 7 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  Shows when the player reaches the wrong classroom
+            elif (x == A1 and y == A2) or (x == F1 and y == F2):
+                print("Wrong class dummy")
+        #  Allows player to move right
+        elif walking_direction == "right":
+            x = x + 1
+            if x == 9:
+                x = x - 1
+                print("You have ran into a wall, good job!")
+            elif x == E1 and y == E2:
+                print("Nice, you actually got to class, that's shocking")
+                walking_direction = "quit"
+            #  States the restrictions of the player
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 3 and y == 5) or (x == 3 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  States the restrictions of the player
+            elif (x == 7 and y == 5) or (x == 7 and y == 6):
+                print("You ran into another wall, good job")
+                print("Because of that, you are going back to the start")
+                x = 5
+                y = 6
+            #  Shows when the player reaches the wrong classroom
+            elif (x == A1 and y == A2) or (x == F1 and y == F2):
+                print("Wrong class dummy")
+        # Player can reprint map at any time
+        elif walking_direction == "map":
+            #  Prints map with borders
+            print("<><><><><><><><><><><><><><>")
+            for layer in Layers:
+                print(*layer, sep='')
+            print("<><><><><><><><><><><><><><>")
+            #  Prints Legend
+            print("\tE = English class")
+            print("\tM = Math class")
+            print("\tS = Science class")
+            print("\tP = Entrace, Where the player starts")
+        #  The player can quit at any time
+        elif walking_direction == "quit":
+            print("Thanks for playing")
+        else:
+            print(f"\t\t**Invalid input**")
+
+while variable_name == "yes":
     print("TYPE A COMMAND")
     print("\t'up' to go up")
     print("\t'down' to go down")
@@ -230,174 +408,14 @@ while variable_name == "yes"
     print("\t'right' to go right")
     print("\t'quit'")
     print("\t'map' to view the map again")
-    walking_direction = "not_quit"
-    input("Did you get all that? ")
+    #  Doesn't matter what the player responds with
+    input("Did you get all that? \n")
+    variable_name = "no"
+    walking(2, 6, 2, 2, 8, 2)
+    English_class = "active"
 
-#  Part of the game where the player has to walk to class
-while walking_direction != "quit" and userinput == "quit":
-    #  Shows the objective
-    print("Objective - Get to English class")
-    print("THESE ARE YOUR COORDINATES")
-    print(f"\t{x}, {y}\n")
-    walking_direction = input(Alright).lower()
-    #  Allows player to move up
-    if walking_direction == "up":
-        y = y - 1
-        if y == 1:
-            y = y + 1
-            print("You have ran into a wall, good job!")
-        elif x == 2 and y == 6:
-            print("Nice, you actually got to class, that's shocking")
-            walking_direction = "quit"
-        #  States the restrictions of the player for movement
-        elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 3 and y == 5) or (x == 3 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 7 and y == 5) or (x == 7 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 2 and y == 2) or (x == 8 and y == 2):
-            print("Wrong class dummy")
-    #  Allows player to move down
-    elif walking_direction == "down":
-        y = y + 1
-        if y == 7:
-            y = y - 1
-            print("You have ran into a wall, good job!")
-        elif x == 2 and y == 6:
-            print("Nice, you actually got to class, that's shocking")
-            walking_direction = "quit"
-        #  States the restrictions of the player for movement
-        elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 3 and y == 5) or (x == 3 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player for movement
-        elif (x == 7 and y == 5) or (x == 7 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  Shows when the player reaches the wrong classroom
-        elif (x == 2 and y == 2) or (x == 8 and y == 2):
-            print("Wrong class dummy")
-    #  Allows player to move left
-    elif walking_direction == "left":
-        x = x - 1
-        if x == 1:
-            x = x + 1
-            print("You have ran into a wall, good job!")
-        elif x == 2 and y == 6:
-            print("Nice, you actually got to class, that's shocking")
-            walking_direction = "quit"
-        #  States the restrictions of the player
-        elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 3 and y == 5) or (x == 3 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 7 and y == 5) or (x == 7 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  Shows when the player reaches the wrong classroom
-        elif (x == 2 and y == 2) or (x == 8 and y == 2):
-            print("Wrong class dummy")
-    #  Allows player to move right
-    elif walking_direction == "right":
-        x = x + 1
-        if x == 9:
-            x = x - 1
-            print("You have ran into a wall, good job!")
-        elif x == 2 and y == 6:
-            print("Nice, you actually got to class, that's shocking")
-            walking_direction = "quit"
-        #  States the restrictions of the player
-        elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 3 and y == 5) or (x == 3 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  States the restrictions of the player
-        elif (x == 7 and y == 5) or (x == 7 and y == 6):
-            print("You ran into another wall, good job")
-            print("Because of that, you are going back to the start")
-            x = 5
-            y = 6
-        #  Shows when the player reaches the wrong classroom
-        elif (x == 2 and y == 2) or (x == 8 and y == 2):
-            print("Wrong class dummy")
-    # Player can reprint map at any time
-    elif walking_direction == "map":
-        #  Prints map with borders
-        print("<><><><><><><><><><><><><><>")
-        for layer in Layers:
-            print(*layer, sep='')
-        print("<><><><><><><><><><><><><><>")
-        #  Prints Legend
-        print("\tE = English class")
-        print("\tM = Math class")
-        print("\tS = Science class")
-        print("\tP = Entrace, Where the player starts")
-    #  The player can quit at any time
-    elif walking_direction == "quit":
-        print("Thanks for playing")
-    else:
-        print(f"\t\t**Invalid input**")
+while English_class != "quit":
+    input()
+    print("You enter the classroom, the class is full.")
+    print(f"HELLO {name}! Please take a seat.")
+    input("You take a seat")
