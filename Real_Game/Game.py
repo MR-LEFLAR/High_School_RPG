@@ -2,7 +2,7 @@
 #  Period: 4
 #  Course: CS30
 #  Date created: 12/12/19
-#  Description: Using th Python Standard Library
+#  Description: Final project
 
 #  Imports random variable generator
 from random import randint
@@ -15,6 +15,23 @@ wallet = 12.27
 name = ""
 variable_name = "no"
 English_class = "quit"
+
+#  Makes the variables blank
+Enotes_1 = ""
+Enotes_2 = ""
+Enotes_3 = ""
+Mnotes_1 = ""
+Mnotes_2 = ""
+Mnotes_3 = ""
+Snotes_1 = ""
+Snotes_2 = ""
+Snotes_3 = ""
+
+
+#  Your binder with all your notes and subjects
+binder = {"English": {Enotes_1, Enotes_2, Enotes_3},
+    "Math": {Mnotes_1, Mnotes_2, Mnotes_3},
+    "Science": {Snotes_1, Snotes_2, Snotes_3}}
 
 #  The location of the main character on the map
 global x
@@ -77,9 +94,10 @@ def the_intro(message):
         print("You must have a name.")
         name = str(input()).lower()
     else:
-        #  She repsonds
+        #  She reponds
         print(f"I see...")
     print("Just one moment please.")
+    print("\tPress enter to wait")
     #  player has to type anything to progress
     #  Makes it feel as if you are waiting and breaks up the many text boxes
     input()
@@ -417,5 +435,35 @@ while variable_name == "yes":
 while English_class != "quit":
     input()
     print("You enter the classroom, the class is full.")
-    print(f"HELLO {name}! Please take a seat.")
-    input("You take a seat")
+    print(f"Hello {name}! Please take a seat.")
+    input("\tYou take a seat")
+    print("Alright class, we are going to start off the day with notes.")
+    print("I know you guys love doing them")
+    #  The player must rewrite the notes that are being given from the teacher
+    print("Now class, begin writing as soon as I do")
+    print("\t\tPoems -- Poems are collections of words that express")
+    print("\t\tan idea or emotion that often use imagery and metaphor.")
+    Enotes_1 = input().lower()
+    print(\n"I hope you can follow along class, I write fast")
+    input()
+    print("\t\tAs you are studying literature, you will likely notice")
+    print("\t\tthat poems come in many different forms.")
+    Enotes_2 = input().lower()
+    print("\t\tAs you read and perhaps write your own poems, it is helpful to")
+    print("\t\tknow the different kinds of poems.")
+    Enotes_3 = input().lower()
+    upper(print("\n\tA random encounter has occurred"))
+    print("Man, isn’t this school big? I could barely find my class in time")
+    print("\tChoose - ‘Friendly’\n\t\t - ’Hostile’\n\t\t - ‘Too friendly’\n\t\t - ‘Say nothing’")
+    choice = input().lower()
+    if choice == "friendly":
+        print("I know right, it’s too big and nobody even showed me around")
+        print(f"My name is {name}, what’s yours?")
+    if choice == "hostile":
+        print("Bro, back off. You’ll have to find your next class on your own")
+    print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
+    print("Oh no, I guess we will have to pick up where we left off tomorrow.")
+    English_class = "quit"
+
+
+print(Enote_1)

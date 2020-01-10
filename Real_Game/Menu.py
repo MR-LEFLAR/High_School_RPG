@@ -7,7 +7,7 @@
 #  Shows the titles
 print("""
 --------------------------WELCOME TO VIRTUAL HELL---------------------
------------------------------AKA SHEETI SCHOOL------------------------
+-----------------------------AKA SHEETIE SCHOOL-----------------------
   """)
 
 #  Creates a book out of characters on the keyboard
@@ -24,7 +24,7 @@ def menu(a, b):
     while a != "quit":
         #  Letting the player actually interact with the game
         print("Type 'start' to begin")
-        print("Type 'quit' to end the porgram")
+        print("Type 'quit' to end the program")
         a = input().lower()
         if a == "start":
             #  Shows the instructions
