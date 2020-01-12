@@ -15,6 +15,7 @@ wallet = 12.27
 name = ""
 variable_name = "no"
 English_class = "quit"
+other_variable_name = "quit"
 
 #  Makes the variables blank
 Enotes_1 = ""
@@ -97,18 +98,17 @@ def the_intro(message):
         #  She reponds
         print(f"I see...")
     print("Just one moment please.")
-    print("\tPress enter to wait")
     #  player has to type anything to progress
     #  Makes it feel as if you are waiting and breaks up the many text boxes
-    input()
+    input("\t\tpress enter to continue")
     #  Shows that she is actually doing something
     print("\tShe clicks her mouse and shuffles through papers")
-    input()
-    input()
+    input("\t\tpress enter to continue")
+    input("\t\tpress enter to continue")
     print(f"Well {name.upper()},")
     #  YOU ARE IN SCHOOL NOW YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
     print(f"I'm glad to say that you are enroled in Sheetie school!")
-    i_lied_about_that_being_the_last_one = input()
+    input("\t\tpress enter to continue")
     print("Here are your classes.")
     paper = input("\ttype 'paper' to view your classes ").lower()
     #  Lets the player make his first choice
@@ -117,12 +117,12 @@ def the_intro(message):
     else:
         print("Well you will have to look at it at some point")
     print(f"Do not be late please.")
-    input()
+    input("\t\tpress enter to continue")
 
 the_intro("So your name is...")
 
 # Imports the introduction menu with the logo and title screen
-import Menu
+"""import Menu"""
 
 name = name.upper()
 the_beginning = input()
@@ -140,7 +140,7 @@ your_grades.science_grade()
 
 print("You walk in the school")
 print("A sea of students is all you can see")
-input()
+input("\t\tpress enter to continue")
 print("You stand there not knowing what to do until you remember...")
 print("You have a backpack!")
 
@@ -174,13 +174,13 @@ while userinput != "quit":
             gum_out_come = randint(1, 3)
             if gum_out_come == 1:
                 print("It was a bad piece, it tasted terrible")
-                input()
+                input("\t\tpress enter to continue")
             elif gum_out_come == 2:
                 print("Tasted pretty good, not bad")
-                input()
+                input("\t\tpress enter to continue")
             elif gum_out_come == 3:
                 print("You blew a bubble and it popped all over your face")
-                input()
+                input("\t\tpress enter to continue")
         elif userinput == "no":
             print("GOOD CHOICE")
         #  The player can quit at any time
@@ -188,12 +188,12 @@ while userinput != "quit":
             print("Thanks for playing")
         #  Can go back on menus
         else:
-            print(f"\t\t**Invalid input**")
-            input()
+            print(f"\t\t**Invalid input**   Press 'enter'")
+            input("\t\tpress enter to continue")
     elif userinput == "wallet":
         wallet = 12.27
         print(f"You have ${wallet} in your wallet")
-        input()
+        input("\t\tpress enter to continue")
     elif userinput == "backpack":
         #  This is inside your backpack
         print("This is inside your backpack")
@@ -203,14 +203,14 @@ while userinput != "quit":
         userinput = input().lower()
         if userinput == "binder":
             print("You have no notes yet")
-            input()
+            input("\t\tpress enter to continue")
         if userinput == "lunch":
             print("YOU HAVE A LUNCH!")
             print("\tTurkey sandwich with mayo and lettuce")
             print("\tCut and washed strawberries")
             print("\tA granola bar - the chocolate chip kind")
             print("\tAnd a juice box of strawberry and kiwi")
-            input()
+            input("\t\tpress enter to continue")
         elif userinput == "map":
             #  prints map with borders
             print("<><><><><><><><><><><><><><>")
@@ -233,16 +233,16 @@ while userinput != "quit":
                 print("You will have to sooner or later to progress")
                 print("<><><><><><><><><><><><><><><><><><><><><><><><><><><>")
             else:
-                print(f"\t\t**Invalid input**")
-                input()
+                print(f"\t\t**Invalid input**   Press 'enter'")
+                input("\t\tpress enter to continue")
         else:
-            print(f"\t\t**Invalid input**")
-            input()
+            print(f"\t\t**Invalid input**   Press 'enter'")
+            input("\t\tpress enter to continue")
     elif userinput == "quit":
         print("Thanks for playing")
     else:
-        print(f"\t\t**Invalid input**")
-        input()
+        print(f"\t\t**Invalid input**   Press 'enter'")
+        input("\t\tpress enter to continue")
 
 
 """Code for the walking portion of the game"""
@@ -416,7 +416,7 @@ def walking(E1, E2, A1, A2, F1, F2):
         elif walking_direction == "quit":
             print("Thanks for playing")
         else:
-            print(f"\t\t**Invalid input**")
+            print(f"\t\t**Invalid input**   Press 'enter'")
 
 while variable_name == "yes":
     print("TYPE A COMMAND")
@@ -434,7 +434,7 @@ while variable_name == "yes":
 
 while English_class != "quit":
     input()
-    print("You enter the classroom, the class is full.")
+    print("You enter the classroom, every desk is filed.")
     print(f"Hello {name}! Please take a seat.")
     input("\tYou take a seat")
     print("Alright class, we are going to start off the day with notes.")
@@ -444,7 +444,7 @@ while English_class != "quit":
     print("\t\tPoems -- Poems are collections of words that express")
     print("\t\tan idea or emotion that often use imagery and metaphor.")
     Enotes_1 = input().lower()
-    print(\n"I hope you can follow along class, I write fast")
+    print("\nI hope you can follow along class, I write fast")
     input()
     print("\t\tAs you are studying literature, you will likely notice")
     print("\t\tthat poems come in many different forms.")
@@ -452,18 +452,50 @@ while English_class != "quit":
     print("\t\tAs you read and perhaps write your own poems, it is helpful to")
     print("\t\tknow the different kinds of poems.")
     Enotes_3 = input().lower()
-    upper(print("\n\tA random encounter has occurred"))
+    print("Your new notes will be placed in your binder")
+    (print("\n\tA RANDOM ENCOUNTER HAS OCCURED"))
+    English_class = "quit"
+    other_variable_name = "not_quit"
+    
+while other_variable_name != "quit":
     print("Man, isn’t this school big? I could barely find my class in time")
-    print("\tChoose - ‘Friendly’\n\t\t - ’Hostile’\n\t\t - ‘Too friendly’\n\t\t - ‘Say nothing’")
+    print("\tChoose - ‘Friendly'")
+    print("\n\t\t - ’Hostile’\n\t\t - ‘Too friendly’\n\t\t - ‘Say nothing’")
     choice = input().lower()
     if choice == "friendly":
         print("I know right, it’s too big and nobody even showed me around")
         print(f"My name is {name}, what’s yours?")
-    if choice == "hostile":
+        input("press enter to continue")
+        other_variable_name = "quit"
+        print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
+        print("Oh no, we will have to pick this up tomorrow class.")
+    elif choice == "hostile":
         print("Bro, back off. You’ll have to find your next class on your own")
-    print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
-    print("Oh no, I guess we will have to pick up where we left off tomorrow.")
-    English_class = "quit"
+        print("Oh, alright then. I'll leave you alone.\n")
+        print("\t\tHe walks away looking sad")
+        input("press enter to continue")
+        print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
+        print("Oh no, we will have to pick this up tomorrow class.")
+        other_variable_name = "quit"
+    elif choice == "too friendly":
+        print("Is it just me or is their some kind of connection here?\n")
+        print("Woah! Um, I have to go now.")
+        print("\t\tHe moves to the other side of the classroom")
+        input("press enter to continue")
+        other_variable_name = "quit"
+        print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
+        print("Oh no, we will have to pick this up tomorrow class.")
+    elif choice == "say nothing":
+        print("Oh, alright then. I'll leave you alone.\n")
+        print("\t\tHe walks away looking sad")
+        input("press enter to continue")
+        other_variable_name = "quit"
+        print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
+        print("Oh no, we will have to pick this up tomorrow class.")
+    elif choice == "quit":
+        print("Thanks for playing")
+        other_variable_name = "quit"
+    else:
+        print(f"\t\t**Invalid input**   Press 'enter'")    
 
-
-print(Enote_1)
+print(Enotes_1)
