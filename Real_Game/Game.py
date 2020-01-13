@@ -16,8 +16,9 @@ name = ""
 variable_name = "no"
 English_class = "quit"
 other_variable_name = "quit"
+other_userinput = "quit"
 
-#  Makes the variables blank
+#  Makes the variables blank, waiting for the player to input something
 Enotes_1 = ""
 Enotes_2 = ""
 Enotes_3 = ""
@@ -31,8 +32,8 @@ Snotes_3 = ""
 
 #  Your binder with all your notes and subjects
 binder = {"English": {Enotes_1, Enotes_2, Enotes_3},
-    "Math": {Mnotes_1, Mnotes_2, Mnotes_3},
-    "Science": {Snotes_1, Snotes_2, Snotes_3}}
+          "Math": {Mnotes_1, Mnotes_2, Mnotes_3},
+          "Science": {Snotes_1, Snotes_2, Snotes_3}}
 
 #  The location of the main character on the map
 global x
@@ -43,7 +44,7 @@ y = 6
 #  Total of gum
 gum_total = 10
 
-#  Creates the Inventory that will be used in game
+#  Creates the Inventory out of a nested list that will be used in game
 Inventory = {
         "Gum": {"Total pieces left": 10},
         "Wallet": {"Total cash": "$12.27"},
@@ -67,7 +68,7 @@ layer8 = [' 7 ', ' | ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' _ ',' | ']
 #  Inputs layers into a list
 Layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8]
 
-#  Class that organizes the students marks
+#  Class that organizes the players marks
 class Grades:
     def __init__(self, english, math, science):
         #  English = E
@@ -111,7 +112,7 @@ def the_intro(message):
     input("\t\tpress enter to continue")
     print("Here are your classes.")
     paper = input("\ttype 'paper' to view your classes ").lower()
-    #  Lets the player make his first choice
+    #  Lets the player make their first choice
     if paper == "paper":
         print(" Peroid 1 is English\n Peroid 2 is Math\n Peroid 3 is Science")
     else:
@@ -119,13 +120,15 @@ def the_intro(message):
     print(f"Do not be late please.")
     input("\t\tpress enter to continue")
 
+#  Player names themselves
 the_intro("So your name is...")
 
-# Imports the introduction menu with the logo and title screen
-"""import Menu"""
+#  Imports the introduction menu with the logo and title screen
+import Menu
 
+#  Makes it so the players name is always upper case
 name = name.upper()
-the_beginning = input()
+input()
 
 """And it begins"""
 print("""
@@ -133,11 +136,14 @@ print("""
     ------------------------------- DAY 1 -------------------------------
     =====================================================================
 """)
+
+#  Shows the grades of the player before each day
 your_grades = Grades(0, 0, 0)
 your_grades.english_grade()
 your_grades.math_grade()
 your_grades.science_grade()
 
+#  Creates the setting of the game, how you are exposed to this new enviornment
 print("You walk in the school")
 print("A sea of students is all you can see")
 input("\t\tpress enter to continue")
@@ -157,9 +163,10 @@ while userinput != "quit":
     print("Type name of each item to see their values")
     print("You can still press 'quit'")
     userinput = input().lower()
-    #  Makes it easier to read
+    #  this line makes eberything easier to read
     print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
     if userinput == "gum":
+        #  Lets the player have gum if they want
         print(f"\tYou have {gum_total} pieces left")
         print("DO YOU WANT A PIECE?")
         print("Type 'yes' or 'no'")
@@ -186,14 +193,17 @@ while userinput != "quit":
         #  The player can quit at any time
         elif userinput == "quit":
             print("Thanks for playing")
-        #  Can go back on menus
+        #  Shows when an input doesn't make sense
         else:
             print(f"\t\t**Invalid input**   Press 'enter'")
             input("\t\tpress enter to continue")
+    #  Shows how much the player has in their wallet
     elif userinput == "wallet":
+        #  My lucky number
         wallet = 12.27
         print(f"You have ${wallet} in your wallet")
         input("\t\tpress enter to continue")
+    #  Lets you see whats inside your backpack
     elif userinput == "backpack":
         #  This is inside your backpack
         print("This is inside your backpack")
@@ -201,16 +211,20 @@ while userinput != "quit":
         print(f"\tMAP")
         print(f"\tLUNCH")
         userinput = input().lower()
+        #  Shows your binder that has your notes
         if userinput == "binder":
             print("You have no notes yet")
             input("\t\tpress enter to continue")
-        if userinput == "lunch":
+        #  Shows what you brought for lunch, changes everyday
+        elif userinput == "lunch":
             print("YOU HAVE A LUNCH!")
             print("\tTurkey sandwich with mayo and lettuce")
             print("\tCut and washed strawberries")
             print("\tA granola bar - the chocolate chip kind")
             print("\tAnd a juice box of strawberry and kiwi")
+            #  Sounds good, yummy
             input("\t\tpress enter to continue")
+        #  Shows the map of the school, based on coordinates
         elif userinput == "map":
             #  prints map with borders
             print("<><><><><><><><><><><><><><>")
@@ -223,6 +237,7 @@ while userinput != "quit":
             print("\tS = Science class")
             print("\tP = Entrace, Where the player STARTS")
             print("DO YOU WANT TO START WALKING?")
+            #  The player gets to decide when to start the walking phase
             print("\t type 'yes' or 'no'")
             userinput = input().lower()
             if userinput == "yes":
@@ -232,12 +247,15 @@ while userinput != "quit":
             elif userinput == "no":
                 print("You will have to sooner or later to progress")
                 print("<><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+            #  Shows when input is wrong
             else:
                 print(f"\t\t**Invalid input**   Press 'enter'")
                 input("\t\tpress enter to continue")
+        #  You get it at this point, I'll stop describing it
         else:
             print(f"\t\t**Invalid input**   Press 'enter'")
             input("\t\tpress enter to continue")
+    #  Lets the player quit at anytime
     elif userinput == "quit":
         print("Thanks for playing")
     else:
@@ -246,13 +264,14 @@ while userinput != "quit":
 
 
 """Code for the walking portion of the game"""
-def walking(E1, E2, A1, A2, F1, F2):
+def walking(E1, E2, A1, A2, F1, F2, S1, S2, congrats, classs):
     walking_direction = "not_quit"
+    #  Where the coordinates of the player come in
     global x
     global y
     while walking_direction != "quit":
         #  Shows the objective
-        print("Objective - Get to English class")
+        print(f"Objective - Get to {classs} class")
         print("THESE ARE YOUR COORDINATES")
         print(f"\t{x}, {y}\n")
         walking_direction = input("type a direction ").lower()
@@ -263,32 +282,35 @@ def walking(E1, E2, A1, A2, F1, F2):
                 y = y + 1
                 print("You have ran into a wall, good job!")
             elif x == E1 and y == E2:
-                print("Wow, you actually got to class")
+                print(congrats)
                 walking_direction = "quit"
             #  States the restrictions of the player for movement
-            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+            #  I know, I'm sorry but I couldn't
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
-            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
             elif (x == 3 and y == 5) or (x == 3 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
             elif (x == 7 and y == 5) or (x == 7 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
             elif (x == A1 and y == A2) or (x == F1 and y == F2):
                 print("Wrong class dummy")
@@ -299,32 +321,34 @@ def walking(E1, E2, A1, A2, F1, F2):
                 y = y - 1
                 print("You have ran into a wall, good job!")
             elif x == E1 and y == E2:
-                print("Nice, you actually got to class, that's shocking")
+                print(congrats)
                 walking_direction = "quit"
             #  States the restrictions of the player for movement
-            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
-            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
             elif (x == 3 and y == 5) or (x == 3 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player for movement
             elif (x == 7 and y == 5) or (x == 7 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  Shows when the player reaches the wrong classroom
             elif (x == A1 and y == A2) or (x == F1 and y == F2):
                 print("Wrong class dummy")
@@ -335,32 +359,34 @@ def walking(E1, E2, A1, A2, F1, F2):
                 x = x + 1
                 print("You have ran into a wall, good job!")
             elif x == E1 and y == E2:
-                print("Nice, you actually got to class, that's shocking")
+                print(congrats)
                 walking_direction = "quit"
             #  States the restrictions of the player
-            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
-            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
             elif (x == 3 and y == 5) or (x == 3 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
             elif (x == 7 and y == 5) or (x == 7 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  Shows when the player reaches the wrong classroom
             elif (x == A1 and y == A2) or (x == F1 and y == F2):
                 print("Wrong class dummy")
@@ -371,32 +397,34 @@ def walking(E1, E2, A1, A2, F1, F2):
                 x = x - 1
                 print("You have ran into a wall, good job!")
             elif x == E1 and y == E2:
-                print("Nice, you actually got to class, that's shocking")
+                print(congrats)
                 walking_direction = "quit"
             #  States the restrictions of the player
-            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and y == 3):
+            elif (x == 2 and y == 3) or (x == 3 and y == 3) or (x == 4 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
-            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and y == 3):
+            elif (x == 6 and y == 3) or (x == 7 and y == 3) or (x == 8 and
+                y == 3):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
             elif (x == 3 and y == 5) or (x == 3 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  States the restrictions of the player
             elif (x == 7 and y == 5) or (x == 7 and y == 6):
                 print("You ran into another wall, good job")
                 print("Because of that, you are going back to the start")
-                x = 5
-                y = 6
+                x = S1
+                y = S2
             #  Shows when the player reaches the wrong classroom
             elif (x == A1 and y == A2) or (x == F1 and y == F2):
                 print("Wrong class dummy")
@@ -418,6 +446,7 @@ def walking(E1, E2, A1, A2, F1, F2):
         else:
             print(f"\t\t**Invalid input**   Press 'enter'")
 
+#  Shows the commands of the walking portion so the player knows how to play
 while variable_name == "yes":
     print("TYPE A COMMAND")
     print("\t'up' to go up")
@@ -429,9 +458,11 @@ while variable_name == "yes":
     #  Doesn't matter what the player responds with
     input("Did you get all that? \n")
     variable_name = "no"
-    walking(2, 6, 2, 2, 8, 2)
+    walking(2, 6, 2, 2, 8, 2, 5, 6, "Nice, you got to class, shocking",
+            "English")
     English_class = "active"
 
+#  First class for the player, yes notes need to be taken down
 while English_class != "quit":
     input()
     print("You enter the classroom, every desk is filed.")
@@ -453,30 +484,43 @@ while English_class != "quit":
     print("\t\tknow the different kinds of poems.")
     Enotes_3 = input().lower()
     print("Your new notes will be placed in your binder")
+    #  You meet someone!!
     (print("\n\tA RANDOM ENCOUNTER HAS OCCURED"))
     English_class = "quit"
     other_variable_name = "not_quit"
-    
+
+#  This portion is your interaction between the player and this new character
 while other_variable_name != "quit":
     print("Man, isn’t this school big? I could barely find my class in time")
+    #  Shows the options of the player
     print("\tChoose - ‘Friendly'")
-    print("\n\t\t - ’Hostile’\n\t\t - ‘Too friendly’\n\t\t - ‘Say nothing’")
+    print("\t\t - ’Hostile’\n\t\t - ‘Too friendly’\n\t\t - ‘Say nothing’")
     choice = input().lower()
+    #  Shows the friendly route
     if choice == "friendly":
         print("I know right, it’s too big and nobody even showed me around")
         print(f"My name is {name}, what’s yours?")
+        print("I'm Jim")
         input("press enter to continue")
         other_variable_name = "quit"
         print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
-        print("Oh no, we will have to pick this up tomorrow class.")
+        print("Oh no, we will have to pick this up tomorrow class. - t")
+        print("\t\ttime, to get to your next class\n")
+        other_userinput = "not_quit"
+        your_grades.english_grade()
+    #  Hostile route
     elif choice == "hostile":
         print("Bro, back off. You’ll have to find your next class on your own")
         print("Oh, alright then. I'll leave you alone.\n")
         print("\t\tHe walks away looking sad")
         input("press enter to continue")
         print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
-        print("Oh no, we will have to pick this up tomorrow class.")
+        print("Oh no, we will have to pick this up tomorrow class. - t")
+        print("\t\ttime, to get to your next class\n")
         other_variable_name = "quit"
+        other_userinput = "not_quit"
+        your_grades.english_grade()
+    #  Romantic route
     elif choice == "too friendly":
         print("Is it just me or is their some kind of connection here?\n")
         print("Woah! Um, I have to go now.")
@@ -484,18 +528,146 @@ while other_variable_name != "quit":
         input("press enter to continue")
         other_variable_name = "quit"
         print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
-        print("Oh no, we will have to pick this up tomorrow class.")
+        print("Oh no, we will have to pick this up tomorrow class. - t")
+        print("\t\ttime, to get to your next class\n")
+        other_userinput = "not_quit"
+        your_grades.english_grade()
+    #  Silent route
     elif choice == "say nothing":
         print("Oh, alright then. I'll leave you alone.\n")
         print("\t\tHe walks away looking sad")
         input("press enter to continue")
         other_variable_name = "quit"
         print("RIIIIIIIIIIIIIIIIINNNNNNNNNNNNNNNNNNNNNNGGGGGGGGGGGGGGGG")
-        print("Oh no, we will have to pick this up tomorrow class.")
+        print("Oh no, we will have to pick this up tomorrow class. - t")
+        print("\t\ttime, to get to your next class\n")
+        other_userinput = "not_quit"
+        your_grades.english_grade()
+    #  Still lets the player quit
     elif choice == "quit":
         print("Thanks for playing")
         other_variable_name = "quit"
     else:
-        print(f"\t\t**Invalid input**   Press 'enter'")    
+        print(f"\t\t**Invalid input**   Press 'enter'")
 
-print(Enotes_1)
+#  Allows for user input for the inventory
+while other_userinput != "quit":
+    #  Shows the inventory to the player
+    print("THIS IS YOUR INVENTORY")
+    for item in Inventory:
+        print(f"\t{item.upper()}")
+    print("Type name of each item to see their values")
+    print("You can still press 'quit'")
+    other_userinput = input().lower()
+    #  this line makes eberything easier to read
+    print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+    if other_userinput == "gum":
+        #  Lets the player have gum if they want
+        print(f"\tYou have {gum_total} pieces left")
+        print("DO YOU WANT A PIECE?")
+        print("Type 'yes' or 'no'")
+        other_userinput = input().lower()
+        #  Shows when they have no gum
+        if gum_total == 0:
+            print("You have no more gum, good job")
+        #  Allows the user to eat the gum
+        elif other_userinput == "yes":
+            gum_total = gum_total - 1
+            print(f"\tYou have {gum_total} pieces left")
+            gum_out_come = randint(1, 3)
+            if gum_out_come == 1:
+                print("It was a bad piece, it tasted terrible")
+                input("\t\tpress enter to continue")
+            elif gum_out_come == 2:
+                print("Tasted pretty good, not bad")
+                input("\t\tpress enter to continue")
+            elif gum_out_come == 3:
+                print("You blew a bubble and it popped all over your face")
+                input("\t\tpress enter to continue")
+        elif other_userinput == "no":
+            print("GOOD CHOICE")
+        #  The player can quit at any time
+        elif other_userinput == "quit":
+            print("Thanks for playing")
+        #  Shows when an input doesn't make sense
+        else:
+            print(f"\t\t**Invalid input**   Press 'enter'")
+            input("\t\tpress enter to continue")
+    #  Shows how much the player has in their wallet
+    elif other_userinput == "wallet":
+        print(f"You have ${wallet} in your wallet")
+        input("\t\tpress enter to continue")
+    #  Lets you see whats inside your backpack
+    elif other_userinput == "backpack":
+        #  This is inside your backpack
+        print("This is inside your backpack")
+        print(f"\tBINDER")
+        print(f"\tMAP")
+        print(f"\tLUNCH")
+        other_userinput = input().lower()
+        #  Shows your binder that has your notes
+        if other_userinput == "binder":
+            print(Enotes_1)
+            print(Enotes_2)
+            print(Enotes_3)
+            input("\t\tpress enter to continue")
+        #  Shows what you brought for lunch, changes everyday
+        elif other_userinput == "lunch":
+            print("YOU HAVE A LUNCH!")
+            print("\tTurkey sandwich with mayo and lettuce")
+            print("\tCut and washed strawberries")
+            print("\tA granola bar - the chocolate chip kind")
+            print("\tAnd a juice box of strawberry and kiwi")
+            #  Sounds good, yummy
+            input("\t\tpress enter to continue")
+        #  Shows the map of the school, based on coordinates
+        elif other_userinput == "map":
+            #  prints map with borders
+            print("<><><><><><><><><><><><><><>")
+            for layer in Layers:
+                print(*layer, sep='')
+            print("<><><><><><><><><><><><><><>")
+            #  Prints Legend
+            print("\tE = English class")
+            print("\tM = Math class")
+            print("\tS = Science class")
+            print("\tP = Entrace")
+            print("Still all the same")
+            print("DO YOU WANT TO START WALKING AGAIN?")
+            #  The player gets to decide when to start the walking phase
+            print("\t type 'yes' or 'no'")
+            other_userinput = input().lower()
+            if other_userinput == "yes":
+                # Tells player the comands when walking
+                other_userinput = "quit"
+                walking(2, 2, 8, 2, 0, 0, 2, 6,
+                        "Great, you seem to know what your doing now.", "Math")
+            elif other_userinput == "no":
+                print("You will have to sooner or later to progress")
+                print("<><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+            #  Shows when input is wrong
+            else:
+                print(f"\t\t**Invalid input**   Press 'enter'")
+                input("\t\tpress enter to continue")
+        #  You get it at this point, I'll stop describing it
+        else:
+            print(f"\t\t**Invalid input**   Press 'enter'")
+            input("\t\tpress enter to continue")
+    #  Lets the player quit at anytime
+    elif other_userinput == "quit":
+        print("Thanks for playing")
+    else:
+        print(f"\t\t**Invalid input**   Press 'enter'")
+        input("\t\tpress enter to continue")
+
+"""Coordinates for each class, you can ignore this"""
+#  E = 2, 6
+#  A = 2, 2
+#  F = 8, 2
+#  P = 5, 6
+
+print("<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>")
+input()
+print("Hey, I just want to say thank you for making it this far.")
+print("I know it wasn't super long, I intended it to be significantly longer")
+print("Hopefully it will be done by next semester:)")
