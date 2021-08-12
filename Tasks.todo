@@ -1,6 +1,7 @@
 Tasks:
-    ☐ Create DAY 1
-        ☐ Introduction
+    []Create DAY 1
+    [] Introduction
+
         ☐ Finish Period 1
             ☐ "Writing test"
         ☐ Finish Period 2
@@ -26,5 +27,5 @@ Tasks:
         ☐ Ending
 
 Period 1 = English
-Peroid 2 = Science
-Peroid 3 = Math
+Period 2 = Science
+Period 3 = Math
