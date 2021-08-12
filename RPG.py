@@ -14,9 +14,9 @@ You say goodbye to your mom as you walk into the entrance
 While walking through the school finding your classes, the bell rings
 You were unable to find any of your classes
 
-A timer starts to count down for 5 minutes
+A timer starts to count down for x minutes
 You lose the game if you are unable to find your classes
-You are forced to restart the peroid
+You are forced to restart the period
 
 Inventory prompt is given
     - Gum
@@ -48,13 +48,11 @@ Gives you sections of hallways where you can choose one of four options
     d) Back
 
 Once you reach class (On time), the teacher greets you and gives you a seat
-You lose the game if you are unable to find your classes
-You are forced to restart the peroid
+Your mark for the class you are late for goes down
 
-You are writing down notes (literally as a player)
-- Write this down because this is going to be on the test -
-If the player cannot write it down properly, they will lose
-A timer is given
+You are writing down notes as a mini game
+The more mistakes made when rewriting, the less your mark
+A timer is shown
 represents the time before the board is erased
 
 Unexpected encounter occurs
@@ -62,13 +60,13 @@ Random student starts talking to you
 'Man, isn't this school big? I could barely find my class in time.'
      - Friendly
      - Hostile
-     - Too Friendly
+     - Weird
      - Say nothing
 
 Choose 'Friendly'
 
 You responed with
-'I know right, it's too big and nobody even showed us around'
+'I know right! It's too big and nobody even showed us around'
 'Very true, my name is Jake, what's yours?'
 FRIEND accquired
 
@@ -111,13 +109,13 @@ Unexpected encounter occurs
 'Sup bro? Just wanted to let you know that your screwed for this class'
      - Friendly
      - Hostile
-     - Too Friendly
+     - Weird
      - Say nothing
 
 Choose 'Hostile'
 
 You respond with
-'Thank you so much for that, I really couldn't care less'
+'Thanks, I really couldn't care less'
 'Hey! Nobody is allowed to talk to Roger like that'
 He walks through you, pushing your shoulder and
 Did he literally wait there to tell you that?
@@ -151,7 +149,7 @@ What do you like to do for fun?
     c) I don't do anything - (Agressive)
     d) Watch TV - (Laidback)
 
-Bell rings
+Bell rings and class is over
 
 Inventory promt is given
     - Gum
@@ -193,15 +191,15 @@ You are given the test
 
 What is the slope of the given linear function?
 -6y + 6x = 12
-    a) 2
+    a) 1
     b) 6
     c) -6
     d) It doesn't have one
 
-What is the angle of D> within the triangle (Degrees)
+What is the angle of A> within the triangle (Degrees)
 B> = 120 - C>
 C> = 27
-180 = B> + C> + D>
+180 = B> + C> + A>
     a) 1
     b) 27
     c) 180
@@ -217,7 +215,7 @@ number two please?'
     - Say_nothing
     - Say_something_mean
 
-Choose Don't help him
+Choose no to help him
 You - 'Sorry, I don't want to get in trouble.
 Him - 'It's okay man, I get it, you don't like helping people, it's cool.'
 
